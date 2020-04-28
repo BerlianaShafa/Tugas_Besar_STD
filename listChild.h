@@ -9,6 +9,7 @@
 
 // Double Circular
 // child : busana
+
 using namespace std;
 
 struct infotypeChild
