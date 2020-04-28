@@ -9,8 +9,8 @@ addressParent allocateParent(infoParent x){
   
     P = new elmlistParent;
     info(P).idPenyewa = x.idPenyewa;
-    info(P).alamatPenyewa = x.alamatPenyewa;
     info(P).namaPenyewa = x.namaPenyewa;
+    info(P).alamatPenyewa = x.alamatPenyewa;
     info(P).umurPenyewa = x.umurPenyewa;
     next(P) = NULL;
 
@@ -82,11 +82,19 @@ void printinfoParent(listParent L){
     addressParent P;
 
     P = firstParent(L);
-    while(P != NULL){
-        cout<< P <<", ";
-        P = next(P);
+    if (P != NULL){
+        do {
+            cout<<"************************************"<<endl;
+            cout<<"ID : "<<P -> info.idPenyewa<<endl;
+            cout<<"Nama : "<<P -> info.namaPenyewa<<endl;
+            cout<<"Alamat : "<< P -> info.alamatPenyewa<<endl;
+            cout<<"Umur : "<< P -> info.umurPenyewa<<endl;
+            cout<<"************************************"<<endl<<endl;
+            P = next(P);
+        }while(P != firstParent(L));
     }
     cout<<endl;
+}
 }
 
 addressParent searchElmParent(listParent &L, string ID){
