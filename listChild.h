@@ -1,11 +1,11 @@
 #ifndef LISTCHILD_H_INCLUDED
 #define LISTCHILD_H_INCLUDED
 #include <iostream>
-#define nextChild(P) P->nextChild
-#define prevChild(P) P->prevChild
-#define infoChild(P) P->infoChild
+#define next(P) P->next
+#define prev(P) P->prev
+#define info(P) P->info
 #define firstChild(L) L.firstChild
-#define busana(P) P->busana
+#define lastChild(L) L.lastChild
 
 // Double Circular
 // child : busana
@@ -23,18 +23,19 @@ typedef struct elmlistChild *addressChild;
 
 struct elmlistChild
 {
-    infotypeChild infoChild;
-    addressChild nextChild;
-    addressChild prevChild;
+    infotypeChild info;
+    addressChild next;
+    addressChild prev;
 };
 
 struct listChild
 {
     addressChild firstChild;
+    addressChild lastChild;
 };
 
 void createListChild(listChild &L);
-addressChild allocateChild(int code, string kindof, string ukuran, int jumlah);
+addressChild allocateChild(infotypeChild x);
 void insertFirstChild(listChild &L, addressChild P);
 void insertAfterChild(listChild &L, addressChild prec, addressChild P);
 void insertLastChild(listChild &L, addressChild P);

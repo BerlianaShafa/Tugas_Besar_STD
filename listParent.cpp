@@ -34,8 +34,8 @@ void insertAfterParent(listParent &L, addressParent prec, addressParent P){
 void insertLastParent(listParent &L, addressParent P){
    addressParent prec;
 
-    prec=first(L);
-    if (first(L)== NULL){
+    prec=firstParent(L);
+    if (firstParent(L)== NULL){
         insertFirstParent(L,P);
     }else {
         while (next(prec) != NULL){
@@ -95,16 +95,15 @@ void printinfoParent(listParent L){
     }
     cout<<endl;
 }
-}
+
 
 addressParent searchElmParent(listParent &L, string ID){
     infoParent x;
     addressParent P;
     
     P=firstParent(L);
-    while(P!=NULL && info(P)!=ID){
+    while(P!=NULL && (info(P)!=ID){
         P=next(P);
     }
-    
     return P;
 }

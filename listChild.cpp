@@ -4,11 +4,11 @@ void createListChild(listChild &L){
     firstChild(L) = NULL;
 }
 
-addressChild allocateChild(infoChild x){
+addressChild allocateChild(infotypeChild x){
     addressChild P = NULL;
 
     P = new elmlistChild;
-    info(P).idCustomer = x.idCustomer;
+    info(P).kodeBusana = x.kodeBusana;
     info(P).jenisBusana = x.jenisBusana;
     info(P).ukuranBusana = x.ukuranBusana;
     info(P).jumlahBusana = x.jumlahBusana;
@@ -77,31 +77,43 @@ void deleteAfterChild(listChild &L, addressChild prec, addressChild &P){
 }
 
 void deleteLastChild(listChild &L, addressChild &P){
+    
     P = lastChild(L);
     lastChild(L) = prev(lastChild(L));
     prev(P) = NULL;
     next(P) = NULL;
     prev(firstChild(L)) = lastChild(L);
-    next(lastChild(L)) = firstChild(L)
+    next(lastChild(L)) = firstChild(L);
 }
 
 void printinfoChild(listChild L){
     addressChild P;
 
     P = firstChild(L);
-    while(P != NULL){
-        cout<< P <<", ";
-        P = next(P);
+    if (P != NULL){
+        do {
+            cout<<"************************************"<<endl;
+            cout<<"Kode : "<<P -> info.<<endl;
+            cout<<"Jenis : "<<P -> info.namaPenyewa<<endl;
+            cout<<"Ukuran : "<< P -> info.alamatPenyewa<<endl;
+            cout<<"Jumlah : "<< P -> info.umurPenyewa<<endl;
+            cout<<"************************************"<<endl<<endl;
+            P = next(P);
+        }while(P != firstChild(L));
     }
+    cout<<endl;
 }
 
-addressChild searchElmChild(listChild &L, int noCust){
-    addressChild P = NULL;
 
-    while(next(P)!=firstChild(L) && info(P).idCustomer!=noCust.idCustomer){
+addressChild searchElmParent(listChild &L, string ID){
+    infotypeChild x;
+    addressChild P;
+    
+    P=firstChild(L);
+    while(P!=NULL && info(P)!=ID){
         P=next(P);
     }
- 
+    
     return P;
 }
 
