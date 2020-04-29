@@ -141,7 +141,6 @@ void printinfoParent(listParent L){
     cout<<endl;
 }
 
-
 addressParent searchElmParent(listParent &L, int ID)
 {
     addressParent P;
@@ -151,6 +150,5 @@ addressParent searchElmParent(listParent &L, int ID)
     {
         P=nextParent(P);
     }
-
     return P;
 }

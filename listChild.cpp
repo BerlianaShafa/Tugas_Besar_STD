@@ -143,7 +143,6 @@ void printinfoChild(listChild L)
 {
     addressChild P;
     int i = 1;
-
     if (firstChild(L)= NULL)
     {
         cout<<"List Kosong";
@@ -161,6 +160,7 @@ void printinfoChild(listChild L)
             i++;
         } while(nextChild(P) != firstChild(L));
     }
+    cout<<endl;
 }
 
 addressChild searchElmChild(listChild &L, int kode)
