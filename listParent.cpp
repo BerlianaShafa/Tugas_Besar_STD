@@ -59,11 +59,10 @@ void insertSortParent(listParent &L, addressParent P)
     {
         insertFirstParent(L, P);
     }
-
     else
     {
         addressParent Q = firstParent(L);
-        while (Q != NULL)
+        while (nextParent(Q) != NULL)
         {
             Q = nextParent(Q);
         }
@@ -119,7 +118,7 @@ void deleteLastParent(listParent &L, addressParent &P){
 
 void printinfoParent(listParent L){
     addressParent P;
-    int i =0;
+    int i =1;
 
     P = firstParent(L);
     if (P == NULL){
@@ -128,15 +127,23 @@ void printinfoParent(listParent L){
     else{
         while (nextParent(P) != NULL)
         {
-            cout<<"***************** Penyewa "<< i <<" *******************"<<endl;
+            cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=||=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl;
+            cout<<"                             Penyewa "<<i<<endl;
             cout<<"ID : "<<P -> infoParent.idPenyewa<<endl;
             cout<<"Nama : "<<P -> infoParent.namaPenyewa<<endl;
             cout<<"Alamat : "<< P -> infoParent.alamatPenyewa<<endl;
             cout<<"Umur : "<< P -> infoParent.umurPenyewa<<endl;
-            cout<<"************************************"<<endl<<endl;
+            cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=||=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl<<endl;
             P = nextParent(P);
             i++;
         }
+        cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=||=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl;
+        cout<<"                             Penyewa "<<i<<endl;
+        cout<<"ID : "<<P -> infoParent.idPenyewa<<endl;
+        cout<<"Nama : "<<P -> infoParent.namaPenyewa<<endl;
+        cout<<"Alamat : "<< P -> infoParent.alamatPenyewa<<endl;
+        cout<<"Umur : "<< P -> infoParent.umurPenyewa<<endl;
+        cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=||=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl<<endl;
     }
     cout<<endl;
 }

@@ -106,16 +106,39 @@ int main()
             printinfoParent(L1);
             break;
         }
-        /*case 4:
+        case 4:
         {
             printinfoChild(L2);
             break;
         }
         case 5:
         {
-            searchElmRelasi(L3);
+            int id,kode;
+            cout<<"|=|=|=|=|=|=|=|=|=|=|=|MENCARI DATA RELASI|=|=|=|=|=|=|=|=|=|=|=|"<<endl;
+            cout<<"Masukkan ID penyewa : ";
+            cin>>id;
+            cout<<endl;
+            cout<<"Masukkan Kode Busana : ";
+            cin>>kode;
+            cout<<endl;
+            addressRelasi P = searchElmRelasi(L3, id, kode);
+            if ( P != NULL )
+            {
+                cout<<"Nama Penyewa : "<< infoParent(peminjam(P)).namaPenyewa<<endl;
+                cout<<"ID Penyewa : " <<infoParent(peminjam(P)).idPenyewa<< endl;
+                cout<<"Umur Penyewa : "<<infoParent(peminjam(P)).umurPenyewa<< endl;
+                cout<<"Alamat Penyewa :"<<infoParent(peminjam(P)).alamatPenyewa<<endl;
+                cout<<"Kode Busana : "<<infoChild(busana(P)).kodeBusana<<endl;
+                cout<<"Jenis Busana : "<<infoChild(busana(P)).jenisBusana<<endl;
+                cout<<"Ukuran Busana : "<<infoChild(busana(P)).ukuranBusana<<endl;
+                cout<<"Jumlah Busana : "<<infoChild(busana(P)).jumlahBusana<<endl;
+            }
+            else
+            {
+                cout<<"Pelanggan dengan nomor "<<id<<" Tidak melakukan penyewaan busana"<<endl;
+            }
             break;
-        }*/
+        }
         case 6:
         {
             printinfoRelasi(L3);
@@ -163,6 +186,8 @@ int main()
                 if (R == NULL)
                 {
                     insertRelasi(L3,R);
+                    cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=||=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl;
+
                 }
                 else
                 {
@@ -175,7 +200,7 @@ int main()
         {
             int ID, kodeBusana;
             cout<<"|=|=|=|=|=|=|=|=|=|=|= PENGEMBALIAN  BUSANA =|=|=|=|=|=|=|=|=|=|"<<endl;
-            cout<<"| Masukkan ID : ";
+            cout<<"| Masukkan ID penyewa : ";
             cin>>ID;
             cout<<"                                                               |"<<endl;
             addressParent P = searchElmParent(L1,ID);

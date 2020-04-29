@@ -141,9 +141,9 @@ void deleteLastChild(listChild &L, addressChild &P)
 
 void printinfoChild(listChild L)
 {
-    addressChild P;
+    addressChild P = firstChild(L);
     int i = 1;
-    if (firstChild(L)= NULL)
+    if (firstChild(L)== NULL)
     {
         cout<<"List Kosong";
     }
@@ -151,14 +151,16 @@ void printinfoChild(listChild L)
     {
         do
         {
-            cout<<"Busana "<<i ;
+            cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=||=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl;
+            cout<<"                             Busana "<<i<<endl;
             cout<<"Kode Busana : "<<infoChild(P).kodeBusana<<endl;
             cout<<"Jenis Busana : "<<infoChild(P).jenisBusana<<endl;
             cout<<"Ukuran Busana(S/M/L/XL/XXL): "<<infoChild(P).ukuranBusana<<endl;
             cout<<"Jumlah Busana : "<<infoChild(P).jumlahBusana<<endl;
+            cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=||=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl<<endl;
             P = nextChild(P);
             i++;
-        } while(nextChild(P) != firstChild(L));
+        } while(nextChild(P) != nextChild(firstChild(L)));
     }
     cout<<endl;
 }
