@@ -185,15 +185,14 @@ int main()
                     Q = searchElmChild(L2,kodeBusana);
                 }
                 addressRelasi R = searchElmRelasi(L3, ID, kodeBusana);
-                if (R == NULL)
+                if (R != NULL)
                 {
-                    insertRelasi(L3,P,Q);
-                    cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=||=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl<<endl;
-
+                    cout<<"|=|=|=|=|=|=|=|=|=| ANDA TELAH  MENYEWA BUSANA |=|=|=|=|=|=|=|=|"<<endl<<endl;
                 }
                 else
                 {
-                    cout<<"|=|=|=|=|=|=|=|=|=| ANDA TELAH  MENYEWA BUSANA |=|=|=|=|=|=|=|=|"<<endl<<endl;
+                    insertRelasi(L3,P,Q);
+                    cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=||=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl<<endl;
                 }
             }
             break;

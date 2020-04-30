@@ -92,7 +92,7 @@ void printinfoRelasi(listRelasi L)
 // By : Berliana Shafa W - 1301194181
 {
     addressRelasi P = firstRelasi(L);
-    int 1 = 0;
+    int i = 1;
     if (firstRelasi(L) == NULL)
     {
         cout<<"List Kosong"<<endl;
@@ -123,7 +123,7 @@ addressRelasi searchElmRelasi(listRelasi &L, int ID, int kode)
     addressRelasi P = firstRelasi(L);
     if (P != NULL)
     {
-        while ( (nextRelasi(P) != NULL) && (infoParent(peminjam(P)).idPenyewa != ID) && (infoChild(busana(P)).kodeBusana != kode))
+        while ( (P != NULL) && (infoParent(peminjam(P)).idPenyewa != ID || infoChild(busana(P)).kodeBusana != kode))
         {
             P = nextRelasi(P);
         }
