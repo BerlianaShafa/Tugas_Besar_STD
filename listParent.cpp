@@ -2,11 +2,14 @@
 #include <stdio.h>
 #include <iomanip>
 
-void createListParent(listParent &L){
+void createListParent(listParent &L)
+// By : Michelle C.F.B - 1301194405
+{
     firstParent(L) = NULL;
 }
 
 addressParent allocateParent(int id, string alamat, string name, int ages)
+// By : Michelle C.F.B - 1301194405 and Berliana ShafaW - 1301194181
 {
     addressParent P = NULL;
 
@@ -20,7 +23,9 @@ addressParent allocateParent(int id, string alamat, string name, int ages)
     return P;
 }
 
-void insertFirstParent(listParent &L, addressParent P){
+void insertFirstParent(listParent &L, addressParent P)
+// By : Michelle C.F.B - 1301194405
+{
     if(firstParent(L)!=NULL)
     {
         nextParent(P)=firstParent(L);
@@ -32,14 +37,18 @@ void insertFirstParent(listParent &L, addressParent P){
     }
 }
 
-void insertAfterParent(listParent &L, addressParent prec, addressParent P){
+void insertAfterParent(listParent &L, addressParent prec, addressParent P)
+// By : Michelle C.F.B - 1301194405
+{
     if (nextParent(prec)!=NULL){
         nextParent(P)=nextParent(prec);
     }
     nextParent(prec)=P;
 }
 
-void insertLastParent(listParent &L, addressParent P){
+void insertLastParent(listParent &L, addressParent P)
+// By : Michelle C.F.B - 1301194405
+{
    addressParent prec;
 
     prec=firstParent(L);
@@ -54,6 +63,7 @@ void insertLastParent(listParent &L, addressParent P){
 }
 
 void insertSortParent(listParent &L, addressParent P)
+// By : Berliana Shafa W - 1301194181
 {
     if(firstParent(L) == NULL || infoParent(P).idPenyewa <= infoParent(firstParent(L)).idPenyewa)
     {
@@ -83,7 +93,9 @@ void insertSortParent(listParent &L, addressParent P)
 }
 
 
-void deleteFirstParent(listParent &L, addressParent &P){
+void deleteFirstParent(listParent &L, addressParent &P)
+// By : Michelle C.F.B - 1301194405
+{
     P=firstParent(L);
     if (nextParent(P) != NULL){
         firstParent(L)=nextParent(P);
@@ -92,7 +104,9 @@ void deleteFirstParent(listParent &L, addressParent &P){
     }
 }
 
-void deleteAfterParent(listParent &L, addressParent prec, addressParent &P){
+void deleteAfterParent(listParent &L, addressParent prec, addressParent &P)
+// By : Michelle C.F.B - 1301194405
+{
     P=nextParent(prec);
     if (nextParent(P)!=NULL){
         nextParent(prec)=nextParent(P);
@@ -101,7 +115,9 @@ void deleteAfterParent(listParent &L, addressParent prec, addressParent &P){
     }
 }
 
-void deleteLastParent(listParent &L, addressParent &P){
+void deleteLastParent(listParent &L, addressParent &P)
+// By : Michelle C.F.B - 1301194405
+{
     addressParent prec;
 
     prec=firstParent(L);
@@ -116,7 +132,9 @@ void deleteLastParent(listParent &L, addressParent &P){
     }
 }
 
-void printinfoParent(listParent L){
+void printinfoParent(listParent L)
+// By : Michelle C.F.B - 1301194405 and Berliana Shafa W - 1301194181
+{
     addressParent P;
     int i =1;
 
@@ -149,6 +167,7 @@ void printinfoParent(listParent L){
 }
 
 addressParent searchElmParent(listParent &L, int ID)
+// By : Michelle C.F.B - 1301194405 and Berliana Shawa W - 1301194181
 {
     addressParent P;
 

@@ -8,6 +8,8 @@
 #define firstRelasi(L) L.firstRelasi
 
 //Single linked list
+// By : Berliana Shafa W - 1301194181
+
 
 using namespace std;
 
@@ -27,7 +29,7 @@ struct listRelasi
 
 void createListRelasi(listRelasi &L);
 addressRelasi allocateRelasi(addressParent P, addressChild Q);
-void insertRelasi(listRelasi &L, addressRelasi P);
+void insertRelasi(listRelasi &L, addressParent R, addressChild Q);
 void deleteFirstRelasi(listRelasi &L, addressRelasi &P);
 void deleteAfterRelasi(listRelasi &L, addressRelasi prec, addressRelasi &P);
 void deleteLastRelasi(listRelasi &L, addressRelasi &P);

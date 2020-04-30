@@ -8,6 +8,7 @@
 using namespace std;
 
 int main()
+// By : Berliana Shafa W - 1301194181
 {
     int choose;
     listParent L1;
@@ -18,6 +19,7 @@ int main()
     createListRelasi(L3);
     while ( choose != 0 )
     {
+        menu :
         cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=| MENU |=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl
             <<"| 0. exit                                                      |"<<endl
             <<"| 1. Memasukkan Data Penyewa                                   |"<<endl
@@ -152,7 +154,7 @@ int main()
             {
                 cout<<"|                                                              |"<<endl;
                 cout<<"|                                                              |"<<endl;
-                cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|= LIST  KOSONG =|=|=|=|=|=|=|=|=|=|=|=|"<<endl;
+                cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|= LIST  KOSONG =|=|=|=|=|=|=|=|=|=|=|=|"<<endl<<endl<<endl;
             }
             else
             {
@@ -185,13 +187,13 @@ int main()
                 addressRelasi R = searchElmRelasi(L3, ID, kodeBusana);
                 if (R == NULL)
                 {
-                    insertRelasi(L3,R);
-                    cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=||=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl;
+                    insertRelasi(L3,P,Q);
+                    cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=||=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl<<endl;
 
                 }
                 else
                 {
-                    cout<<"|=|=|=|=|=|=|=|=|=| ANDA TELAH  MENYEWA BUSANA |=|=|=|=|=|=|=|=|"<<endl;
+                    cout<<"|=|=|=|=|=|=|=|=|=| ANDA TELAH  MENYEWA BUSANA |=|=|=|=|=|=|=|=|"<<endl<<endl;
                 }
             }
             break;
@@ -278,6 +280,10 @@ int main()
                     cout<<"                                                               |"<<endl;
                     P = searchElmParent(L1,ID);
                 }
+                else
+                {
+                    goto menu;
+                }
             }
             if (firstParent(L1) == P)
             {
@@ -297,7 +303,7 @@ int main()
                 Q = nextParent(Q);
                 deleteAfterParent(L1, Q, P);
             }
-            cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|= BERHASIL =|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl<<endl;
+            cout<<"|=|=|=|=|=|=|=|=|=|=|=|PENGHAPUSAN BERHASIL|=|=|=|=|=|=|=|=|=|=|"<<endl<<endl;
             break;
         }
         case 10:
@@ -338,41 +344,35 @@ int main()
                 T = nextChild(T);
                 deleteAfterChild(L2, T, Q);
             }
-            cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|= BERHASIL =|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl;
+            cout<<"|=|=|=|=|=|=|=|=|=|=|=|PENGHAPUSAN BERHASIL|=|=|=|=|=|=|=|=|=|=|"<<endl<<endl;
             break;
         }
         case 11:
         {
-            cout<<"|=|=|=|=|=|=|=|=|=|= TOTAL PEMINJAM  BUSANA =|=|=|=|=|=|=|=|=|=|"<<endl;
-            cout<<"|                                                              |"<<endl;
-            cout<<"| Saat ini terdapat "<<totalPeminjaman(L3)<<" |"<<endl;
-            cout<<"|                                                              |"<<endl;
-            cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=||=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl;
+            cout<<"|=|=|=|=|=|=|=|=|=|= TOTAL PEMINJAM  BUSANA =|=|=|=|=|=|=|=|=|=|"<<endl<<endl;
+            cout<<" Saat ini terdapat "<<totalPeminjaman(L3)<<" yang sedang meminjaman busana "<<endl<<endl;
+            cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=||=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl<<endl;
             break;
         }
         case 12:
         {
-            cout<<"|=|=|=|=|=|=|=|=|= TOTAL BUSANA Yang DIPINJAM =|=|=|=|=|=|=|=|=|"<<endl;
-            cout<<"|                                                              |"<<endl;
-            cout<<"| Saat ini busana yang sedang dipinjam berjumlah "<<totalPinjamBusana(L3)<<" |"<<endl;
-            cout<<"|                                                              |"<<endl;
-            cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=||=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl;
+            cout<<"|=|=|=|=|=|=|=|=|= TOTAL BUSANA Yang DIPINJAM =|=|=|=|=|=|=|=|=|"<<endl<<endl;
+            cout<<" Saat ini busana yang sedang dipinjam berjumlah "<<totalPinjamBusana(L3)<<endl<<endl;
+            cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=||=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl<<endl;
             break;
         }
         case 13:
         {
-            cout<<"|=|=|=|=|=|=|=|=| RATA RATA PEMINJAMAN  BUSANA |=|=|=|=|=|=|=|=|"<<endl;
-            cout<<"|                                                              |"<<endl;
-            cout<<"| Rata- rata peminjaman saat ini adalah "<<ratarataPinjaman(L3)<<" |"<<endl;
-            cout<<"|                                                              |"<<endl;
-            cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=||=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl;
+            cout<<"|=|=|=|=|=|=|=|=| RATA RATA PEMINJAMAN  BUSANA |=|=|=|=|=|=|=|=|"<<endl<<endl;
+            cout<<" Rata- rata peminjaman saat ini adalah "<<ratarataPinjaman(L3)<<endl<<endl;
+            cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=||=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl<<endl;
             break;
         }
     }
 }
-        cout<<endl;
-        system("PAUSE");
-        system("CLS");
+    cout<<endl;
+    system("PAUSE");
+    system("CLS");
     return 0;
 
 }

@@ -1,11 +1,13 @@
 #include "listChild.h"
 
 void createListChild(listChild &L)
+// By : Michelle C.F.B - 1301194405
 {
     firstChild(L) = NULL;
 }
 
 addressChild allocateChild(int code, string kindof, string ukuran, int jumlah)
+// By : Michelle C.F.B - 1301194405 and Berliana Shafa W - 1301194181
 {
     addressChild P = NULL;
 
@@ -21,6 +23,7 @@ addressChild allocateChild(int code, string kindof, string ukuran, int jumlah)
 }
 
 void insertFirstChild(listChild &L, addressChild P)
+// By : Michelle C.F.B - 1301194405 and Berliana Shafa W - 1301194181
 {
     if(firstChild(L) == NULL)
     {
@@ -39,6 +42,7 @@ void insertFirstChild(listChild &L, addressChild P)
 }
 
 void insertAfterChild(listChild &L, addressChild prec, addressChild P)
+// By : Michelle C.F.B - 1301194405
 {
     nextChild(P)=nextChild(prec);
     prevChild(nextChild(P))=P;
@@ -47,6 +51,7 @@ void insertAfterChild(listChild &L, addressChild prec, addressChild P)
 }
 
 void insertLastChild(listChild &L, addressChild P)
+// By : Michelle C.F.B - 1301194405
 {
     if(firstChild(L) == NULL)
     {
@@ -63,6 +68,7 @@ void insertLastChild(listChild &L, addressChild P)
 
 
 void insertSortChild(listChild &L, addressChild P)
+// By : Berliana Shafa W - 1301194181
 {
     if (firstChild(L) == NULL || infoChild(P).kodeBusana <= infoChild(firstChild(L)).kodeBusana)
     {
@@ -84,6 +90,7 @@ void insertSortChild(listChild &L, addressChild P)
 }
 
 void deleteFirstChild(listChild &L, addressChild &P)
+// By : Michelle C.F.B - 1301194405
 {
     P = firstChild(L);
     if(firstChild(L) == NULL)
@@ -107,6 +114,7 @@ void deleteFirstChild(listChild &L, addressChild &P)
 }
 
 void deleteAfterChild(listChild &L, addressChild prec, addressChild &P)
+// By : Michelle C.F.B - 1301194405
 {
     P = nextChild(prec);
     if(nextChild(prec) == firstChild(L))
@@ -130,6 +138,7 @@ void deleteAfterChild(listChild &L, addressChild prec, addressChild &P)
 }
 
 void deleteLastChild(listChild &L, addressChild &P)
+// By : Michelle C.F.B - 1301194405
 {
     P = prevChild(firstChild(L));
 
@@ -140,6 +149,7 @@ void deleteLastChild(listChild &L, addressChild &P)
 }
 
 void printinfoChild(listChild L)
+// By : Michelle C.F.B - 1301194405 and Berliana Shafa W - 1301194118
 {
     addressChild P = firstChild(L);
     int i = 1;
@@ -166,6 +176,7 @@ void printinfoChild(listChild L)
 }
 
 addressChild searchElmChild(listChild &L, int kode)
+// By : Michelle C.F.B - 1301194405 and Berliana Shafa W - 1301194181
 {
     addressChild P = firstChild(L);
     if (P!= NULL)

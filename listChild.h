@@ -10,7 +10,7 @@
 
 // Double Circular
 // child : busana
-
+// By : Berliana Shafa W - 1301194181
 using namespace std;
 
 struct infotypeChild

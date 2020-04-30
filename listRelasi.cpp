@@ -3,11 +3,13 @@
 #include <stdlib.h>
 
 void createListRelasi(listRelasi &L)
+// By : Berliana Shafa W - 1301194181
 {
     firstRelasi(L) = NULL;
 }
 
 addressRelasi allocateRelasi(addressParent P, addressChild Q)
+// By : Berliana Shafa W - 1301194181
 {
     addressRelasi R;
     R = new elmlistRelasi;
@@ -18,26 +20,28 @@ addressRelasi allocateRelasi(addressParent P, addressChild Q)
     return R;
 }
 
-void insertRelasi(listRelasi &L, addressRelasi P)
+void insertRelasi(listRelasi &L, addressParent R, addressChild Q)
+// By : Berliana Shafa W - 1301194181
 {
+    addressRelasi P = allocateRelasi(R,Q);
     if (firstRelasi(L) == NULL)
     {
         firstRelasi(L) = P;
     }
     else
     {
-        addressRelasi R;
-        while (nextRelasi(firstRelasi(L)) != NULL )
+        addressRelasi R = firstRelasi(L);
+        while (nextRelasi(R) != NULL )
         {
-            firstRelasi(L) = nextRelasi(firstRelasi(L));
+            R = nextRelasi(R);
         }
-        firstRelasi(L) = nextRelasi(firstRelasi(L));
-        nextRelasi(firstRelasi(L)) = R;
-        nextRelasi(R) = NULL;
+        nextRelasi(R) = P;
     }
+    cout<<"masuk"<<endl;
 }
 
 void deleteFirstRelasi(listRelasi &L, addressRelasi &P)
+// By : Berliana Shafa W - 1301194181
 {
     P = firstRelasi(L);
     if (firstRelasi(L) == NULL)
@@ -52,6 +56,7 @@ void deleteFirstRelasi(listRelasi &L, addressRelasi &P)
 }
 
 void deleteAfterRelasi(listRelasi &L, addressRelasi prec, addressRelasi &P)
+// By : Berliana Shafa W - 1301194181
 {
     if (nextRelasi(prec)!=NULL)
     {
@@ -66,6 +71,7 @@ void deleteAfterRelasi(listRelasi &L, addressRelasi prec, addressRelasi &P)
 }
 
 void deleteLastRelasi(listRelasi &L, addressRelasi &P)
+// By : Berliana Shafa W - 1301194181
 {
     P = firstRelasi(L);
     if (firstRelasi(L) == NULL)
@@ -83,6 +89,7 @@ void deleteLastRelasi(listRelasi &L, addressRelasi &P)
 }
 
 void printinfoRelasi(listRelasi L)
+// By : Berliana Shafa W - 1301194181
 {
     addressRelasi P = firstRelasi(L);
     if (firstRelasi(L) == NULL)
@@ -91,7 +98,7 @@ void printinfoRelasi(listRelasi L)
     }
     else
     {
-        while (P !=NULL)
+        while (P != NULL)
         {
             cout<<"Nama Penyewa : "<< infoParent(peminjam(P)).namaPenyewa<<endl;
             cout<<"ID Penyewa : " <<infoParent(peminjam(P)).idPenyewa<< endl;
@@ -108,16 +115,25 @@ void printinfoRelasi(listRelasi L)
 }
 
 addressRelasi searchElmRelasi(listRelasi &L, int ID, int kode)
+// By : Berliana Shafa W - 1301194181
 {
     addressRelasi P = firstRelasi(L);
-    while ( P != NULL && infoParent(peminjam(P)).idPenyewa != ID && infoChild(busana(P)).kodeBusana != kode)
+    if (P != NULL)
     {
-        P = nextRelasi(P);
+        while ( (nextRelasi(P) != NULL) && (infoParent(peminjam(P)).idPenyewa != ID) && (infoChild(busana(P)).kodeBusana != kode))
+        {
+            P = nextRelasi(P);
+        }
+        return P;
     }
-    return P;
+    else
+    {
+        return NULL;
+    }
 }
 
 int totalPeminjaman (listRelasi L)
+// By : Berliana Shafa W - 1301194181
 {
     addressRelasi P = firstRelasi(L);
     int i = 0;
@@ -130,9 +146,11 @@ int totalPeminjaman (listRelasi L)
 }
 
 int totalPinjamBusana (listRelasi L)
+// By : Berliana Shafa W - 1301194181
 {
     addressRelasi P = firstRelasi(L);
-    int i,j = 0;
+    int i = 0;
+    int j = 0;
     while (P != NULL)
     {
         j = infoChild(busana(P)).jumlahBusana;
@@ -144,9 +162,18 @@ int totalPinjamBusana (listRelasi L)
 }
 
 int ratarataPinjaman (listRelasi L)
+// By : Berliana Shafa W - 1301194181
 {
-    int average;
-    average = totalPinjamBusana(L) / totalPeminjaman(L) ;
-
-    return average;
+    int i,j,average;
+    i = totalPeminjaman(L);
+    j = totalPinjamBusana(L);
+    if (i==0 && j==0)
+    {
+        return 0;
+    }
+    else
+    {
+        average = j / i ;
+        return average;
+    }
 }

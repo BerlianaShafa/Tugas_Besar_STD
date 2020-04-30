@@ -7,6 +7,8 @@
 #define peminjam(P) P->peminjam
 
 //Single linked list
+// parent  : penyewa
+// By : Berliana Shafa W - 1301194181
 
 using namespace std;
 
