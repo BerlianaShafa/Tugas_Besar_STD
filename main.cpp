@@ -257,6 +257,7 @@ int main()
         }
         case 9:
         {
+            string yesno;
             int ID;
             cout<<"|=|=|=|=|=|=|=|=|=|=| PENGHAPUSAN  DATA DIRI |=|=|=|=|=|=|=|=|=|"<<endl;
             cout<<"| Masukkan ID : ";
@@ -266,11 +267,17 @@ int main()
             while (P == NULL)
             {
                 cout<<"|=|=|=|=|=|=|=|=|=|= MAAF ID  TIDAK DITEMUKAN =|=|=|=|=|=|=|=|=|"<<endl;
-                cout<<"                                                               |"<<endl;
-                cout<<"| Silahkan Masukkan kembali ID Anda : ";
-                cin>>ID;
-                cout<<"                                                               |"<<endl;
-                P = searchElmParent(L1,ID);
+                cout<<endl;
+                cout<<"Masukkan ulang (yes/no) : ";
+                cin>>yesno;
+                cout<<endl;
+                if (yesno == "yes")
+                {
+                    cout<<"| Silahkan Masukkan kembali ID Anda : ";
+                    cin>>ID;
+                    cout<<"                                                               |"<<endl;
+                    P = searchElmParent(L1,ID);
+                }
             }
             if (firstParent(L1) == P)
             {
