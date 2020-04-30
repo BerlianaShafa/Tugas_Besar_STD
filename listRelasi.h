@@ -8,7 +8,7 @@
 #define firstRelasi(L) L.firstRelasi
 
 //Single linked list
-// By : Berliana Shafa W - 1301194181
+// By : Berliana Shafa W - 1301194181 and Michelle C.F.B - 1301194405
 
 
 using namespace std;
