@@ -37,7 +37,7 @@ void insertRelasi(listRelasi &L, addressParent R, addressChild Q)
         }
         nextRelasi(T) = P;
     }
-    cout<<"masuk"<<endl;
+    cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=IN=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl<<endl;
 }
 
 void deleteFirstRelasi(listRelasi &L, addressRelasi &P)
@@ -95,22 +95,23 @@ void printinfoRelasi(listRelasi L)
     int i = 1;
     if (firstRelasi(L) == NULL)
     {
-        cout<<"List Kosong"<<endl;
+        cout<<"|=|=|=|=|=|=|=|=|=|=|=|= MAAF LIST KOSONG =|=|=|=|=|=|=|=|=|=|=|"<<endl<<endl;
     }
     else
     {
         while (P != NULL)
         {
-            cout<<"PENYEWAAN/PEMINJAMAN "<<i<<endl;
-            cout<<"Nama Penyewa : "<< infoParent(peminjam(P)).namaPenyewa<<endl;
-            cout<<"ID Penyewa : " <<infoParent(peminjam(P)).idPenyewa<< endl;
-            cout<<"Umur Penyewa : "<<infoParent(peminjam(P)).umurPenyewa<< endl;
-            cout<<"Alamat Penyewa :"<<infoParent(peminjam(P)).alamatPenyewa<<endl;
-            cout<<"Kode Busana : "<<infoChild(busana(P)).kodeBusana<<endl;
-            cout<<"Jenis Busana : "<<infoChild(busana(P)).jenisBusana<<endl;
-            cout<<"Ukuran Busana : "<<infoChild(busana(P)).ukuranBusana<<endl;
-            cout<<"Jumlah Busana : "<<infoChild(busana(P)).jumlahBusana<<endl;
-            cout<<endl;
+            cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=||=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl;
+            cout<<"                       PENYEWAAN/PEMINJAMAN "<<i<<endl;
+            cout<<"Nama Penyewa      : "<< infoParent(peminjam(P)).namaPenyewa<<endl;
+            cout<<"ID Penyewa        : " <<infoParent(peminjam(P)).idPenyewa<< endl;
+            cout<<"Umur Penyewa      : "<<infoParent(peminjam(P)).umurPenyewa<< endl;
+            cout<<"Alamat Penyewa    :"<<infoParent(peminjam(P)).alamatPenyewa<<endl;
+            cout<<"Kode Busana       : "<<infoChild(busana(P)).kodeBusana<<endl;
+            cout<<"Jenis Busana      : "<<infoChild(busana(P)).jenisBusana<<endl;
+            cout<<"Ukuran Busana     : "<<infoChild(busana(P)).ukuranBusana<<endl;
+            cout<<"Jumlah Busana     : "<<infoChild(busana(P)).jumlahBusana<<endl;
+            cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=||=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl<<endl;
             i++;
             P = nextRelasi(P);
         }

@@ -155,7 +155,7 @@ void printinfoChild(listChild L)
     int i = 1;
     if (firstChild(L)== NULL)
     {
-        cout<<"List Kosong";
+        cout<<"|=|=|=|=|=|=|=|=|=|=|=|= MAAF LIST KOSONG =|=|=|=|=|=|=|=|=|=|=|"<<endl<<endl;
     }
     else
     {
@@ -163,10 +163,10 @@ void printinfoChild(listChild L)
         {
             cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=||=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl;
             cout<<"                             Busana "<<i<<endl;
-            cout<<"Kode Busana : "<<infoChild(P).kodeBusana<<endl;
-            cout<<"Jenis Busana : "<<infoChild(P).jenisBusana<<endl;
-            cout<<"Ukuran Busana(S/M/L/XL/XXL): "<<infoChild(P).ukuranBusana<<endl;
-            cout<<"Jumlah Busana : "<<infoChild(P).jumlahBusana<<endl;
+            cout<<"Kode Busana                 : "<<infoChild(P).kodeBusana<<endl;
+            cout<<"Jenis Busana                : "<<infoChild(P).jenisBusana<<endl;
+            cout<<"Ukuran Busana(S/M/L/XL/XXL) : "<<infoChild(P).ukuranBusana<<endl;
+            cout<<"Jumlah Busana               : "<<infoChild(P).jumlahBusana<<endl;
             cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=||=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl<<endl;
             P = nextChild(P);
             i++;

@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1588256488 source:d:\tugas kuliah\github\asd_task-4\tugas_besar_std\listchild.cpp
+1588261581 source:d:\tugas kuliah\github\asd_task-4\tugas_besar_std\listchild.cpp
 	"listChild.h"
 
 1588256779 d:\tugas kuliah\github\asd_task-4\tugas_besar_std\listchild.h
 	<iostream>
 
-1588256593 source:d:\tugas kuliah\github\asd_task-4\tugas_besar_std\listparent.cpp
+1588261547 source:d:\tugas kuliah\github\asd_task-4\tugas_besar_std\listparent.cpp
 	"listParent.h"
 	<stdio.h>
 	<iomanip>
@@ -13,7 +13,7 @@
 1588256209 d:\tugas kuliah\github\asd_task-4\tugas_besar_std\listparent.h
 	<iostream>
 
-1588257714 source:d:\tugas kuliah\github\asd_task-4\tugas_besar_std\listrelasi.cpp
+1588261978 source:d:\tugas kuliah\github\asd_task-4\tugas_besar_std\listrelasi.cpp
 	"listRelasi.h"
 	<iostream>
 	<stdlib.h>
@@ -23,7 +23,7 @@
 	"listChild.h"
 	"listParent.h"
 
-1588260098 source:d:\tugas kuliah\github\asd_task-4\tugas_besar_std\main.cpp
+1588261965 source:d:\tugas kuliah\github\asd_task-4\tugas_besar_std\main.cpp
 	<iostream>
 	<iomanip>
 	<stdlib.h>

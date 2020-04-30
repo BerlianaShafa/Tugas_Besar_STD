@@ -140,27 +140,27 @@ void printinfoParent(listParent L)
 
     P = firstParent(L);
     if (P == NULL){
-        cout<<"List Penyewaan Kosong.";
+        cout<<"|=|=|=|=|=|=|=|=|=|=|=|= MAAF LIST KOSONG =|=|=|=|=|=|=|=|=|=|=|"<<endl<<endl;
     }
     else{
         while (nextParent(P) != NULL)
         {
             cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=||=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl;
             cout<<"                             Penyewa "<<i<<endl;
-            cout<<"ID : "<<P -> infoParent.idPenyewa<<endl;
-            cout<<"Nama : "<<P -> infoParent.namaPenyewa<<endl;
+            cout<<"ID     : "<<P -> infoParent.idPenyewa<<endl;
+            cout<<"Nama   : "<<P -> infoParent.namaPenyewa<<endl;
             cout<<"Alamat : "<< P -> infoParent.alamatPenyewa<<endl;
-            cout<<"Umur : "<< P -> infoParent.umurPenyewa<<endl;
+            cout<<"Umur   : "<< P -> infoParent.umurPenyewa<<endl;
             cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=||=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl<<endl;
             P = nextParent(P);
             i++;
         }
         cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=||=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl;
         cout<<"                             Penyewa "<<i<<endl;
-        cout<<"ID : "<<P -> infoParent.idPenyewa<<endl;
-        cout<<"Nama : "<<P -> infoParent.namaPenyewa<<endl;
+        cout<<"ID     : "<<P -> infoParent.idPenyewa<<endl;
+        cout<<"Nama   : "<<P -> infoParent.namaPenyewa<<endl;
         cout<<"Alamat : "<< P -> infoParent.alamatPenyewa<<endl;
-        cout<<"Umur : "<< P -> infoParent.umurPenyewa<<endl;
+        cout<<"Umur   : "<< P -> infoParent.umurPenyewa<<endl;
         cout<<"|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|=||=|=|=|=|=|=|=|=|=|=|=|=|=|=|=|"<<endl<<endl;
     }
     cout<<endl;

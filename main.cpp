@@ -27,7 +27,7 @@ int main()
             <<"| 3. Menampilkan Daftar Penyewa                                |"<<endl
             <<"| 4. Menampilkan Daftar Busana                                 |"<<endl
             <<"| 5. Mencari data peminjam dengan ID penyewa atau kode busana  |"<<endl
-            <<"| 6. Menampilkan Semua Data Peminjaman                         |"<<endl
+            <<"| 6. Menampilkan Semua Data Peminjaman/Penyewaan               |"<<endl
             <<"| 7. Penyewaan Busana                                          |"<<endl
             <<"| 8. Pengembalian Busana                                       |"<<endl
             <<"| 9. Hapus Data Penyewa                                        |"<<endl
@@ -46,7 +46,7 @@ int main()
             string nama, alamat;
             int age, id;
             cout<<"|=|=|=|=|=|=|=|=|=|=|= INPUT DATA PENYEWA =|=|=|=|=|=|=|=|=|=|=|"<<endl;
-            cout<<"| ID Penyewa : ";
+            cout<<"| ID Penyewa     : ";
             cin>>id;
             cout<<"                                                               |"<<endl;
             addressParent Q = searchElmParent(L1, id);
@@ -57,10 +57,10 @@ int main()
             }
             else
             {
-                cout<<"| Nama Penyewa : ";
+                cout<<"| Nama Penyewa   : ";
                 cin>>nama;
                 cout<<"                                                               |"<<endl;
-                cout<<"| Umur Penyewa : ";
+                cout<<"| Umur Penyewa   : ";
                 cin>>age;
                 cout<<"                                                               |"<<endl;
                 cout<<"| Alamat Penyewa : ";
@@ -78,7 +78,7 @@ int main()
             int kodeB,jum;
             string Size,jenis;
             cout<<"|=|=|=|=|=|=|=|=|=|=|=| INPUT DATA BUSANA|=|=|=|=|=|=|=|=|=|=|=|"<<endl;
-            cout<<"| ID/Kode Busana : ";
+            cout<<"| ID/Kode Busana             : ";
             cin>>kodeB;
             cout<<"                                                               |"<<endl;
             addressChild Q = searchElmChild(L2, kodeB);
@@ -88,13 +88,13 @@ int main()
             }
             else
             {
-                cout<<"| Jenis Busana : ";
+                cout<<"| Jenis Busana               : ";
                 cin>>jenis;
                 cout<<"                                                               |"<<endl;
                 cout<<"| Ukuran Busana(S/M/L/XL/XXL): ";
                 cin>>Size;
                 cout<<"                                                               |"<<endl;
-                cout<<"| Jumlah Busana : ";
+                cout<<"| Jumlah Busana              : ";
                 cin>>jum;
                 cout<<"                                                               |"<<endl;
                 addressChild R = allocateChild(kodeB,jenis,Size,jum);
@@ -117,7 +117,7 @@ int main()
         {
             int id,kode;
             cout<<"|=|=|=|=|=|=|=|=|=|=|=|MENCARI DATA RELASI|=|=|=|=|=|=|=|=|=|=|=|"<<endl;
-            cout<<"Masukkan ID penyewa : ";
+            cout<<"Masukkan ID penyewa  : ";
             cin>>id;
             cout<<endl;
             cout<<"Masukkan Kode Busana : ";
@@ -126,14 +126,14 @@ int main()
             addressRelasi P = searchElmRelasi(L3, id, kode);
             if ( P != NULL )
             {
-                cout<<"Nama Penyewa : "<< infoParent(peminjam(P)).namaPenyewa<<endl;
-                cout<<"ID Penyewa : " <<infoParent(peminjam(P)).idPenyewa<< endl;
-                cout<<"Umur Penyewa : "<<infoParent(peminjam(P)).umurPenyewa<< endl;
-                cout<<"Alamat Penyewa :"<<infoParent(peminjam(P)).alamatPenyewa<<endl;
-                cout<<"Kode Busana : "<<infoChild(busana(P)).kodeBusana<<endl;
-                cout<<"Jenis Busana : "<<infoChild(busana(P)).jenisBusana<<endl;
-                cout<<"Ukuran Busana : "<<infoChild(busana(P)).ukuranBusana<<endl;
-                cout<<"Jumlah Busana : "<<infoChild(busana(P)).jumlahBusana<<endl;
+                cout<<"Nama Penyewa    : "<< infoParent(peminjam(P)).namaPenyewa<<endl;
+                cout<<"ID Penyewa      : " <<infoParent(peminjam(P)).idPenyewa<< endl;
+                cout<<"Umur Penyewa    : "<<infoParent(peminjam(P)).umurPenyewa<< endl;
+                cout<<"Alamat Penyewa  :"<<infoParent(peminjam(P)).alamatPenyewa<<endl;
+                cout<<"Kode Busana     : "<<infoChild(busana(P)).kodeBusana<<endl;
+                cout<<"Jenis Busana    : "<<infoChild(busana(P)).jenisBusana<<endl;
+                cout<<"Ukuran Busana   : "<<infoChild(busana(P)).ukuranBusana<<endl;
+                cout<<"Jumlah Busana   : "<<infoChild(busana(P)).jumlahBusana<<endl;
             }
             else
             {
@@ -158,7 +158,7 @@ int main()
             }
             else
             {
-                cout<<"| Masukkan ID : ";
+                cout<<"| Masukkan ID penyewa : ";
                 cin>>ID;
                 cout<<"                                                               |"<<endl;
                 addressParent P = searchElmParent(L1,ID);
@@ -368,10 +368,9 @@ int main()
             break;
         }
     }
-}
     cout<<endl;
     system("PAUSE");
     system("CLS");
+}
     return 0;
-
 }
