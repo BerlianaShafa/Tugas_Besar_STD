@@ -24,18 +24,18 @@ void insertRelasi(listRelasi &L, addressParent R, addressChild Q)
 // By : Berliana Shafa W - 1301194181
 {
     addressRelasi P = allocateRelasi(R,Q);
+    addressRelasi T = firstRelasi(L);
     if (firstRelasi(L) == NULL)
     {
         firstRelasi(L) = P;
     }
     else
     {
-        addressRelasi R = firstRelasi(L);
-        while (nextRelasi(R) != NULL )
+        while (nextRelasi(T) != NULL )
         {
-            R = nextRelasi(R);
+            T = nextRelasi(T);
         }
-        nextRelasi(R) = P;
+        nextRelasi(T) = P;
     }
     cout<<"masuk"<<endl;
 }
@@ -92,6 +92,7 @@ void printinfoRelasi(listRelasi L)
 // By : Berliana Shafa W - 1301194181
 {
     addressRelasi P = firstRelasi(L);
+    int 1 = 0;
     if (firstRelasi(L) == NULL)
     {
         cout<<"List Kosong"<<endl;
@@ -100,6 +101,7 @@ void printinfoRelasi(listRelasi L)
     {
         while (P != NULL)
         {
+            cout<<"PENYEWAAN/PEMINJAMAN "<<i<<endl;
             cout<<"Nama Penyewa : "<< infoParent(peminjam(P)).namaPenyewa<<endl;
             cout<<"ID Penyewa : " <<infoParent(peminjam(P)).idPenyewa<< endl;
             cout<<"Umur Penyewa : "<<infoParent(peminjam(P)).umurPenyewa<< endl;
@@ -109,6 +111,7 @@ void printinfoRelasi(listRelasi L)
             cout<<"Ukuran Busana : "<<infoChild(busana(P)).ukuranBusana<<endl;
             cout<<"Jumlah Busana : "<<infoChild(busana(P)).jumlahBusana<<endl;
             cout<<endl;
+            i++;
             P = nextRelasi(P);
         }
     }
